@@ -29,7 +29,7 @@ deactivate
 
 
 ## Running Code:
-python3 for Mac
+python3 for Mac,
 python for Windows
 
 - ### Bert Model for transaction categorization
