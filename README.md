@@ -27,22 +27,30 @@ pip install -r requirements.txt
 deactivate
 ```
 
+
 ## Running Code:
+python3 for Mac
+python for Windows
+
 - ### Bert Model for transaction categorization
   ```sh
   cd Transaction_Categorization/Bert_Model
+  #use python if windows
   python3 main.py
   ```
 - ### TF-IDF & Support Vector Classification for transaction categorization
   ```sh
   cd Transaction_Categorization/TF-IDF_Model
+  #use python if windows
   python3 main.py
   ```
 - ### Income Estimation
   ```sh
   cd Income_Estimation
+  #use python if windows
   python3 main.py data processing model
   ```
+
   
 
     
