@@ -1,7 +1,7 @@
 import pandas as pd
 import pyarrow 
 def get_data():
-    parquet_file1 = 'C:\\Users\\Jessica\\DSC180A\\private-dsc180a\\src\\Transacation_inflows_with_date_3k.pqt'
+    parquet_file1 = 'Transacation_inflows_with_date_3k.pqt'
 
     inflow = pd.read_parquet(parquet_file1, engine='pyarrow')
     return inflow

@@ -7,6 +7,5 @@ scikit-learn
 seaborn
 matplotlib
 pyarrow
-sys
 statistics
 datetime
