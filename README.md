@@ -14,7 +14,7 @@ pip install -r requirements.txt
 # To deactivate the virtual environment when you're done
 deactivate
 ```
-Mac SetUp
+Mac 
 ```sh
 pip install virtualenv
 virtualenv -p python3.9 myenv
@@ -41,7 +41,7 @@ deactivate
 - ### Income Estimation
   ```sh
   cd Income_Estimation
-  python3 run.py data processing model
+  python3 main.py data processing model
   ```
   
 
