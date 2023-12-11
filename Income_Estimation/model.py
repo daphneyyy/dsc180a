@@ -191,7 +191,7 @@ def estimate_yearly_income(df, income_estimate):
             last_date = trans.iloc[-1]
             return (last_date - first_date).days
     
-    annual_income = pd.Series()
+    annual_income = pd.Series(dtype = float)
     for userID in income_estimate.index:
         
         income = income_estimate.loc[userID]
@@ -203,11 +203,13 @@ def estimate_yearly_income(df, income_estimate):
                 estimated_annual_income = (income / time_span) * 365
             else:
                 estimated_annual_income = income
-            annual_income[userID] = estimated_annual_income
+            
+            annual_income.loc[userID] = estimated_annual_income
         else:
-            annual_income[userID] = 0
+            annual_income.loc[userID] = 0
           
     return annual_income
+
 
 '''
 Function creates figures 

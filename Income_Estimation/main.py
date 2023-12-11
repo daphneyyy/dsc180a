@@ -35,4 +35,8 @@ def main(targets):
 if __name__ == '__main__':
 
     targets = sys.argv[1:]
+<<<<<<< HEAD
     main(targets)
+=======
+    main(targets)
+>>>>>>> 3828bc9b28c9133e45f65fa6b047a21c387b6dcd
