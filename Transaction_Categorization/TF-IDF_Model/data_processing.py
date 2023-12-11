@@ -22,13 +22,14 @@ df['memo'] = df['memo'].str.lower()
 # Applying thoese cleaning functions to the subset of the dataset
 # that we choose.
 dff = df.copy()
-dff['memo'] = dff['memo'].apply(clean_text1)
+dff['memo'] = dff['memo'].apply(remove_com)
 dff['memo'] = dff['memo'].apply(remove_key_phrases)
 dff['memo'] = dff['memo'].apply(remove_special_char)
 dff['memo'] = dff['memo'].apply(remove_xs)
+dff['memo'] = dff['memo'].apply(remove_digits)
 dff['memo'] = dff['memo'].apply(standardize_phrase)
+dff['memo'] = dff['memo'].apply(remove_oh)
 dff['memo'] = dff['memo'].apply(remove_multiple_spaces)
-dff['memo'] = dff['memo'].apply(remove_numbers_and_oh)
 
 dff['new_date'] = pd.to_datetime(dff['posted_date'])
 
@@ -37,4 +38,4 @@ dff['month'] = dff['new_date'].dt.month
 dff['day'] = dff['new_date'].dt.day
 dff['weekday'] = dff['new_date'].dt.weekday 
 
-dff = dff.drop(['prism_consumer_id', 'prism_account_id', 'posted_date', 'new_date'], axis =1)
+dff = dff.drop(['prism_consumer_id', 'prism_account_id', 'posted_date', 'new_date'], axis=1)
