@@ -54,14 +54,14 @@ def main():
         loss_train_avg = loss_train_total/len(dataloader_train)            
         tqdm.write(f'Training loss: {loss_train_avg}')
         
-        val_loss, predictions, true_vals = evaluate(dataloader_validation)
+        val_loss, predictions, true_vals = evaluate(dataloader_validation, model)
         val_f1 = f1_func(predictions, true_vals)
         tqdm.write(f'Validation loss: {val_loss}')
         tqdm.write(f'F1 Score (Weighted): {val_f1}')
 
     # Calculating the Accuracy per class and the overall Acurracy Score
     # Caculating the precision, recall, and f1-score
-    _, predictions, true_vals = evaluate(dataloader_test)
+    _, predictions, true_vals = evaluate(dataloader_test, model)
     accuracy_per_class(predictions, true_vals, label_dict_inverse)
 
     preds = np.argmax(predictions, axis = 1)
