@@ -7,6 +7,8 @@ import numpy as np
 import random
 from sklearn.metrics import classification_report
 
+import warnings
+warnings.filterwarnings("ignore")
 
 seed_val = 17
 random.seed(seed_val)
@@ -16,7 +18,7 @@ torch.cuda.manual_seed_all(seed_val)
 
 def main():
     # Train the model
-
+    print('---------- Training the model... ----------')
     for epoch in tqdm(range(1, epochs+1)):
         
         model.train()
@@ -58,7 +60,7 @@ def main():
         val_f1 = f1_func(predictions, true_vals)
         tqdm.write(f'Validation loss: {val_loss}')
         tqdm.write(f'F1 Score (Weighted): {val_f1}')
-
+    print('---------- Done training. ----------')
     # Calculating the Accuracy per class and the overall Acurracy Score
     # Caculating the precision, recall, and f1-score
     _, predictions, true_vals = evaluate(dataloader_test, model)

@@ -2,6 +2,8 @@ from data_processing import *
 import torch
 import numpy as np    
 from sklearn.metrics import f1_score, accuracy_score
+import warnings
+warnings.filterwarnings("ignore")
 
 ## Calculate the F1 score for a multi-class classification task.
 ## Args: preds-Predicted labels,  labels-True labels

@@ -16,6 +16,7 @@ df = pd.concat([data1, data2], axis=0)
 categories_filter = ['GENERAL_MERCHANDISE', 'FOOD_AND_BEVERAGES', 'GROCERIES', 'TRAVEL', 'PETS', 'EDUCATION', 'OVERDRAFT', 'RENT', 'MORTGAGE']
 df = df[df['category'].isin(categories_filter)]
 
+print('---------- Cleaning the dataset... ----------')
 ## Changing memo_clean column values to all lower case first.
 df['memo'] = df['memo'].str.lower()
 
@@ -39,3 +40,4 @@ dff['day'] = dff['new_date'].dt.day
 dff['weekday'] = dff['new_date'].dt.weekday 
 
 dff = dff.drop(['prism_consumer_id', 'prism_account_id', 'posted_date', 'new_date'], axis=1)
+print('---------- Done cleaning. ----------')
