@@ -1,3 +1,4 @@
+from data_processing import *
 import torch
 import numpy as np    
 from sklearn.metrics import f1_score, accuracy_score
@@ -35,7 +36,7 @@ def accuracy_per_class(preds, labels, label_dict_inverse):
     # Print overall accuracy
     print(f'Overall Accuracy: {overall_accuracy:.2%}')
 
-def evaluate(dataloader_val):
+def evaluate(dataloader_val, model):
 
     model.eval()
     
