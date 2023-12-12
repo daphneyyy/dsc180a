@@ -36,7 +36,7 @@ data1 = data[data['category_description'].isin(categories_filter)]
 
 # Only inlcude a subset of the dataset 
 # to prevent running out of memory problem.
-data2 = data1[:100000]
+data2 = data1[:50000]
 
 # Data Cleanning Process Part
 ## Changing memo_clean column values to all lower case first.
