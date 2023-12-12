@@ -10,7 +10,7 @@ In fall quarter 2023, in order for better measuring credit scores of customers, 
   ```
 ### 3. Activate the virtual environment
   ```sh
-  conda activate dsc180a
+  conda activate dsc180
   ```
 
 <!-- Windows
@@ -62,7 +62,8 @@ python for Windows
   python3 main.py data processing model
   ```
 
-## Deactivate the virtual environment when you're done
+## Deactivate environment
+### Deactivate the virtual environment when you're done
   ```sh 
   conda deactivate
   ```
