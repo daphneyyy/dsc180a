@@ -6,6 +6,8 @@ from processing import process_data
 
 from model import run_model
 
+import warnings
+warnings.filterwarnings("ignore")
 
 def main(targets):
     '''
@@ -26,7 +28,7 @@ def main(targets):
         print('processing complete')
 
     if 'model' in targets:
-        
+
         results = run_model(inflow, determined_transactions, undetermined_transactions)
 
     return

@@ -12,6 +12,8 @@ from sklearn.pipeline import Pipeline,FeatureUnion
 from sklearn.preprocessing import StandardScaler
 from sklearn.preprocessing import OneHotEncoder
 from sklearn.compose import ColumnTransformer
+import warnings
+warnings.filterwarnings("ignore")
 
 def main():
     # Define the feature dataframe "X" and prediction column "y".
@@ -44,9 +46,10 @@ def main():
         ('preprocessor', preproc1),
         ('clf', LinearSVC())
     ])
-
+    print('---------- Training the model... ----------')
     # build a model
     mod = pl.fit(X_train,y_train)
+    print('---------- Done training. ----------')
 
     # calcualte the accuracy score for our model
     print("Training accuracy score: ", mod.score(X_train, y_train))

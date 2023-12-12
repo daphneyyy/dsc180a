@@ -16,6 +16,9 @@ from transformers import AdamW, get_linear_schedule_with_warmup
 import random
 from sklearn.metrics import classification_report
 
+import warnings
+warnings.filterwarnings("ignore")
+
 # upload the dataset and load the data.
 # this dataset is the original dataset 
 # and does not contain the dates and times.
@@ -41,13 +44,14 @@ data2['memo_clean'] = data2['memo_clean'].str.lower()
 
 # Applying thoese cleaning functions to the subset of the dataset
 # that we choose.
-
+print('---------- Cleaning the dataset... ----------')
 data2['memo_clean'] = data2['memo_clean'].apply(clean_text1)
 data2['memo_clean'] = data2['memo_clean'].apply(remove_key_phrases)
 data2['memo_clean'] = data2['memo_clean'].apply(remove_special_char)
 data2['memo_clean'] = data2['memo_clean'].apply(remove_xs)
 data2['memo_clean'] = data2['memo_clean'].apply(standardize_phrase)
 data2['memo_clean'] = data2['memo_clean'].apply(remove_multiple_spaces)
+print('---------- Done cleaning. ----------')
 
 # Check numbers of each categories.
 data2['category_description'].value_counts()
@@ -72,7 +76,7 @@ val_text, test_text, val_labels, test_labels = train_test_split(temp_text, temp_
                                                                 random_state=2018, 
                                                                 test_size=0.5, 
                                                                 stratify=temp_labels)
-
+print('---------- Making Models ---------- ')
 # Load the tokenizer from bert packages
 tokenizer = BertTokenizer.from_pretrained('bert-base-uncased', 
                                         do_lower_case=True)
